@@ -262,6 +262,11 @@ p {
 .hero {
   background-color: var(--bcg-dark);
   text-align: center;
+  height: 600px;
+}
+
+.hero-content {
+  margin: auto;
 }
 
 .hero-title {
@@ -379,9 +384,10 @@ p {
 
 .set-button {
   display: flex;
-  width: 611px;
+  width: 626px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
 }
 
 .set-button .item {

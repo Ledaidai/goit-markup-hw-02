@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 :root {
   --main-black-text: #000000;
   --main-grey-text: #212121;
@@ -15,34 +25,54 @@ body {
   background-color: var(--bcg-white);
   color: var(--main-lightgrey-text);
   font-family: Roboto, sans-serif;
+  margin: 0;
 }
 
 /* Button */
-.button,
-.button.secondary:hover {
-  background-color: var(--accent-color);
-  color: var(--white-text);
+
+.button {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .button.primary {
+  background-color: var(--accent-color);
+  color: var(--white-text);
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
 
   cursor: pointer;
+
+  padding: 10px 32px;
+  min-width: 200px;
+  height: 50px;
 }
 
 .button.secondary {
   background-color: #f5f4fa;
   color: var(--main-grey-text);
-
+  padding: 6px 22px;
   cursor: pointer;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+}
+
+.button.secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--white-text);
 }
 
 /* List */
 .list {
   list-style: none;
+  padding: 0;
 }
 
 /* Link */
@@ -50,7 +80,39 @@ body {
   text-decoration: none;
 }
 
+/* Container */
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  outline: 2px solid tomato;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Header */
+.header-container {
+  display: flex;
+  align-items: center;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+}
 .logo {
   color: var(--main-black-text);
   font-family: Raleway, sans-serif;
@@ -69,9 +131,17 @@ body {
   color: var(--accent-color);
 }
 
-.site-nav .link {
-  color: var(--main-grey-text);
+.site-nav {
+  display: flex;
+  margin: 0;
+  margin-left: 93px;
+}
 
+.site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--main-grey-text);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -87,8 +157,20 @@ body {
   color: var(--accent-color);
 }
 
-.nav-contacts,
-.nav-contacts .link:visited {
+.site-nav .item + .item {
+  margin-left: 50px;
+}
+
+.header-contacts {
+  display: flex;
+  margin-left: auto;
+}
+
+.header-contacts .item + .item {
+  margin-left: 50px;
+}
+.header-contacts,
+.header-contacts .link:visited {
   color: var(--main-lightgrey-text);
   font-weight: 500;
   font-size: 14px;
@@ -96,8 +178,8 @@ body {
   letter-spacing: 0.02em;
 }
 
-.nav-contacts .link:hover,
-.nav-contacts .link:focus {
+.header-contacts .link:hover,
+.header-contacts .link:focus {
   color: var(--accent-color);
 }
 
@@ -107,11 +189,15 @@ body {
 }
 
 .logo-footer {
+  display: inline-block;
+
   font-family: Raleway, sans-serif;
   font-weight: bold;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 .logo-second {
   color: var(--white-text);
@@ -125,6 +211,8 @@ body {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
+  margin-bottom: 9px;
 }
 
 .footer-section .contacts {
@@ -137,12 +225,21 @@ body {
   letter-spacing: 0.03em;
 }
 
+.footer-section .email {
+  display: inline-block;
+  margin-bottom: 9px;
+}
+
 .footer-section .contacts:hover,
 .footer-section .contacts:focus {
   color: var(--accent-color);
 }
 
 /* Section */
+
+.section {
+  margin-bottom: 94px;
+}
 .section-title {
   color: var(--main-grey-text);
 
@@ -151,6 +248,8 @@ body {
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
+
+  margin-bottom: 50px;
 }
 
 /* СТУДИЯ */
@@ -158,20 +257,38 @@ body {
 /* Герой */
 .hero {
   background-color: var(--bcg-dark);
+  text-align: center;
 }
 
 .hero-title {
-  color: var(--white-text);
+  width: 696px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 
+  color: var(--white-text);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 /* Преимущества */
+.feature-list {
+  display: flex;
+  margin-top: 94px;
+  margin-bottom: 94px;
+}
+
+.feature-list .item {
+  width: 270px;
+}
+
+.feature-list .item:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
 .feature-list .title {
   color: var(--main-grey-text);
 
@@ -180,6 +297,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+
+  margin-bottom: 10px;
 }
 
 .feature-list p {
@@ -190,10 +309,49 @@ body {
   letter-spacing: 0.03em;
 }
 
+/* Чем занимаемся */
+.works {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.works .item {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+}
+
+.works .item:nth-child(3n) {
+  margin-right: 0;
+}
+
 /* Наша команда */
 .team {
   background-color: var(--bcg-grey);
 }
+
+.team-list {
+  display: flex;
+  /* flex-wrap: wrap; */
+  padding: 0;
+  margin: 0;
+  margin-left: -30px;
+}
+
+.team-list > .item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 20px;
+}
+
+.team-list img {
+  margin-bottom: 30px;
+}
+
+.team-content {
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+}
+
 .team-list .title {
   color: var(--main-grey-text);
 
@@ -201,6 +359,8 @@ body {
   font-size: 16px;
   line-height: 1.89;
   letter-spacing: 0.03em;
+
+  margin-bottom: 10px;
 }
 
 .team-list p {
@@ -213,12 +373,51 @@ body {
 
 /* ПОРТФОЛИО */
 
+.set-button {
+  display: flex;
+  width: 611px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.set-button .item {
+  margin-right: 8px;
+}
+
+.set-button .item:last-child {
+  margin-right: 0;
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  margin-right: -30px;
+  margin-bottom: -30px;
+}
+.portfolio-item {
+  lex-basis: calc(100% / 3 - 30px);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.portfolio-item > .link {
+  display: inline-block;
+}
+
+.portfolio-item img {
+  margin-bottom: 20px;
+}
+
 .portfolio-item .title {
   color: var(--main-grey-text);
   font-weight: bold;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+
+  margin-bottom: 4px;
 }
 
 .portfolio-item .desc {

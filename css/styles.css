@@ -88,7 +88,6 @@ body {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 2px solid tomato;
 }
 
 h1,
@@ -105,6 +104,10 @@ p {
 }
 
 /* Header */
+
+.header {
+  border-bottom: 1px solid #ececec;
+}
 .header-container {
   display: flex;
   align-items: center;
@@ -238,7 +241,8 @@ p {
 /* Section */
 
 .section {
-  margin-bottom: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 .section-title {
   color: var(--main-grey-text);
@@ -408,6 +412,10 @@ p {
 
 .portfolio-item img {
   margin-bottom: 20px;
+}
+
+.portfolio-content {
+  border: 1px solid #eee;
 }
 
 .portfolio-item .title {
